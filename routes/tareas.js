@@ -14,4 +14,15 @@ router.post(
   tareaControllers.crearTarea
 );
 
+router.get("/", auth, tareaControllers.obtenerTareas);
+
+router.put(
+  "/:id",
+  auth,
+  [check("nombre", "El nombre de la tarea es obligatorio").not().isEmpty()],
+  tareaControllers.actualizarTarea
+);
+
+router.delete("/:id", auth, tareaControllers.eliminarTarea);
+
 module.exports = router;
