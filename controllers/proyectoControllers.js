@@ -81,7 +81,7 @@ exports.actualizarProyecto = async (req, res) => {
 exports.eliminarProyecto = async (req, res) => {
   try {
     // Revisar el ID
-    let proyecto = await Proyecto.frindById(req.params.id);
+    let proyecto = await Proyecto.findById(req.params.id);
 
     //Revisar que el proyecto existe
     if (!proyecto) {
