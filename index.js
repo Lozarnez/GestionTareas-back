@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json({ extended: true }));
 
 // Configurar puerto del servidor
-const PORT = process.env.PORT || 8080;
+const port = process.env.port || 8080;
 
 // Importar rutas
 app.use("/api/usuarios", require("./routes/usuarios"));
@@ -24,6 +24,6 @@ app.use("/api/proyectos", require("./routes/proyectos"));
 app.use("/api/tareas", require("./routes/tareas"));
 
 // Iniciar servidor
-app.listen(PORT, () => {
-  console.log(`Server on port ${PORT}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server on port ${port}`);
 });
